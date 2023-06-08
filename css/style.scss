@@ -1,0 +1,295 @@
+$color-grey-verylight: #EDEDED;
+$color-grey-light: #7A7A7A;
+$color-yellow: #FFD15B;
+
+body {
+ 
+font-family: 'Manrope', sans-serif;
+  background-color: $color-grey-verylight;
+}
+
+
+/*************header*****************/
+/*************header*****************/
+/*************header*****************/
+header {
+  width: 100%;
+  height: 500px;
+  background-image: url('/assets/Recette01.jpg');
+  background-size: cover;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 69px;
+
+}
+
+.rond1 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 23px;
+  height: 23px;
+  background-color: white;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.rond2 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 34px;
+  height: 34px;
+  background-color: white;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+
+
+
+header {
+  img {
+    max-height: 500px
+  }
+
+  input {
+    height: 72px;
+    width: 954px;
+    border-radius: 11px;
+    padding-left:35px;
+  float:left;
+  }
+
+  #inputSearch::placeholder{
+    font-size:16px;
+    font-weight: 400;
+    color: $color-grey-light;
+    font-style: italic;
+}
+
+h1{
+  width:890px;
+  height:132px;
+  font-family: 'Anton', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color:$color-yellow;
+  text-align: center;
+}
+}
+
+/***********navigation***************/
+/***********navigation***************/
+/***********navigation***************/
+
+
+/*******menu deroulant*****/
+nav {
+  display: flex;
+  gap: 65px;
+  margin-bottom: 55px;
+  margin-top: 20px;
+}
+
+#myButton,
+#myButton2 {
+  width: 180px;
+  height: 56px;
+  border-radius: 11px;
+  background-color: white;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  i {
+    margin-right: 25px;
+  }
+}
+
+.myButton {
+  background-color: skyblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.myButton:hover {
+  background-color: blue;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &-child {
+    position: absolute;
+    display: none;
+    background-color: black;
+    min-width: 200px;
+  }
+
+}
+
+.dropdown-child a {
+  color: rgb(255, 255, 255);
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-child {
+  display: block;
+}
+
+.myButton2 {
+  background-color: rgb(235, 135, 135);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+
+.myButton2:hover2 {
+  background-color: blue;
+
+  .myButton {
+    display: none;
+  }
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-child2 {
+  position: absolute;
+  display: none;
+  background-color: black;
+  min-width: 200px;
+}
+
+.dropdown-child2 a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown2:hover .dropdown-child2 {
+  display: block;
+}
+
+
+
+/***********main***************/
+/***********main***************/
+/***********main***************/
+
+main section {
+  border: 2px solid black;
+  width: 380px;
+  height: 731px;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+  margin-top: 20px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 253px;
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    width: 330px;
+    height: 76px;
+  }
+
+  h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: $color-grey-light;
+  }
+
+  .preparingTime {
+    position: absolute;
+    right: 22px;
+    top: 21px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: $color-yellow;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+
+
+.recipe,
+.ingredients {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.recipe {
+  margin-bottom: 32px;
+}
+
+.ingredient-liste {
+  display: flex;
+  flex-direction: row;
+}
+
+body>main>section>div.ingredients>div>ul>li>span:nth-child(1) {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body>main>section>div.ingredients>div>ul>li>span:nth-child(3) {
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-grey-light;
+}
+
+body>main>section>div.ingredients>div>ul>li {
+  list-style-type: none;
+  margin-bottom: 21px;
+}
+
+body>main>section>div.ingredients>div>ul {
+  padding: 0px;
+  width: 50%;
+}
