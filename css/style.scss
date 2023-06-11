@@ -15,7 +15,7 @@ font-family: 'Manrope', sans-serif;
 header {
   width: 100%;
   height: 500px;
-  background-image: url('/assets/Recette01.jpg');
+  background-image: url('/assets/Recette18.jpg');
   background-size: cover;
   display:flex;
   flex-direction: column;
@@ -205,6 +205,15 @@ nav {
 /***********main***************/
 /***********main***************/
 /***********main***************/
+main{
+display:flex;
+flex-direction:row;
+justify-content: space-around;
+flex-wrap: wrap;
+gap:30px;
+
+}
+
 
 main section {
   border: 2px solid black;
@@ -233,6 +242,7 @@ main section {
     font-weight: 400;
     width: 330px;
     height: 76px;
+    overflow: auto;
   }
 
   h3 {
@@ -271,6 +281,7 @@ main section {
 .ingredient-liste {
   display: flex;
   flex-direction: row;
+  overflow: auto;
 }
 
 body>main>section>div.ingredients>div>ul>li>span:nth-child(1) {
