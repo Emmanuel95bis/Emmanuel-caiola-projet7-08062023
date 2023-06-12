@@ -1,18 +1,12 @@
 const recipeCard = document.querySelector('main');
 
 function ingredientsList(ingredients) {
-    /*console.log(ingredients);
-    console.log(ingredients[0].ingredient);*/
     let cardIngredient1 = `<ul>`;
     let cardIngredient2 = `<ul>`;
     let compteur = 0;
 
     ingredients.forEach(element => {
-        console.log(element);
-         /* console.log(element.quantity);
-         console.log(element.unit);
-         console.log(cardIngredient1);*/
-        if (compteur % 2 == 0) {
+           if (compteur % 2 == 0) {
 
             cardIngredient1 = cardIngredient1 + `
     <li><span>${element.ingredient}</span><br><span>`
@@ -36,7 +30,6 @@ function ingredientsList(ingredients) {
 }
 
 function displayRecipesCards() {
-    console.log(recipes);
     const recipeCard = document.querySelector('main');
     const wrapper = document.createElement('section');
     recipes.forEach(element => {

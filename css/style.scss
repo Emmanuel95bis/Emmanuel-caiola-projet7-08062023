@@ -100,7 +100,7 @@ nav {
 }
 
 #myButton,
-#myButton2 {
+#myButton2,#myButton3 {
   width: 180px;
   height: 56px;
   border-radius: 11px;
@@ -138,18 +138,33 @@ nav {
   position: relative;
   display: inline-block;
 
-  &-child {
+  &-child,&-child2,&-child3 {
     position: absolute;
     display: none;
     background-color: black;
     min-width: 200px;
+    z-index: 9;
   }
-
 }
 
-.dropdown-child a {
+.menu1 ul li{
+  width:200px;
+}
+
+.menu1 ul li:hover{
+  color:red;
+}
+
+.dropdown-child .menu1{
+  display:flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: nowrap; 
+}
+
+.dropdown-child li,.dropdown-child2 li,.dropdown-child3 li {
   color: rgb(255, 255, 255);
-  padding: 20px;
+  padding: 0px;
   text-decoration: none;
   display: block;
 }
@@ -167,9 +182,7 @@ nav {
   margin-top: 20px;
 }
 
-
-
-.myButton2:hover2 {
+.myButton2:hover {
   background-color: blue;
 
   .myButton {
@@ -202,6 +215,48 @@ nav {
 
 
 
+.myButton3 {
+  background-color: rgb(235, 135, 135);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+
+.myButton3:hover {
+  background-color: blue;
+
+  .myButton {
+    display: none;
+  }
+}
+
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-child3 {
+  position: absolute;
+  display: none;
+  background-color: black;
+  min-width: 200px;
+}
+
+.dropdown-child3 a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown3:hover .dropdown-child3 {
+  display: block;
+}
+
 /***********main***************/
 /***********main***************/
 /***********main***************/
@@ -230,6 +285,7 @@ main section {
     border-top-left-radius: 21px;
     border-top-right-radius: 21px;
     object-fit: cover;
+    z-index: 1;
   }
 
   h2 {
