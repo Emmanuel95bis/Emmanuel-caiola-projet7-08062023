@@ -12,7 +12,7 @@ function createMenuList(tableau) {
         compteur++;
         if (compteur == 1) liste = liste + "<ul>";
         if (compteur % 30 == 0) liste = liste + '</ul><ul>';
-        liste = liste + `<li>${element}</li>`;
+        liste = liste + `<li id="choix1">${element}</li>`;
     });
 }
 
@@ -51,7 +51,7 @@ function displayMenu() {
     createMenuList(tableau);
     const dropdown2 = document.querySelector('.dropdown-child2');
     const menu2 = document.createElement('div');
-    menu2.setAttribute('class', 'menu1');
+    menu2.setAttribute('class', 'menu2');
     menu2.innerHTML = liste;
     dropdown2.appendChild(menu2);
 
@@ -68,7 +68,7 @@ function displayMenu() {
     createMenuList(tableau);
     const dropdown3 = document.querySelector('.dropdown-child3');
     const menu3 = document.createElement('div');
-    menu3.setAttribute('class', 'menu1');
+    menu3.setAttribute('class', 'menu3');
     menu3.innerHTML = liste;
     dropdown3.appendChild(menu3);
 

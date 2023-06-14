@@ -6,7 +6,7 @@ function ingredientsList(ingredients) {
     let compteur = 0;
 
     ingredients.forEach(element => {
-           if (compteur % 2 == 0) {
+        if (compteur % 2 == 0) {
 
             cardIngredient1 = cardIngredient1 + `
     <li><span>${element.ingredient}</span><br><span>`
@@ -31,8 +31,9 @@ function ingredientsList(ingredients) {
 
 function displayRecipesCards() {
     const recipeCard = document.querySelector('main');
-    const wrapper = document.createElement('section');
+    let compteur = 0;
     recipes.forEach(element => {
+        compteur++;
         const wrapper = document.createElement('section');
 
         let card = `
@@ -49,7 +50,7 @@ function displayRecipesCards() {
         let card2 = ingredientsList(element.ingredients);
 
 
-        card = card + card2 +`</div>
+        card = card + card2 + `</div>
         </div>
         <span class="preparingTime">${element.time}min</span>`;
 
@@ -57,4 +58,8 @@ function displayRecipesCards() {
         recipeCard.appendChild(wrapper);
 
     });
+    const nbRecipes = document.querySelector('.navigation');
+    const txtSpan = document.createElement('span');
+    txtSpan.innerHTML = `${compteur} recettes`;
+    nbRecipes.appendChild(txtSpan);
 };

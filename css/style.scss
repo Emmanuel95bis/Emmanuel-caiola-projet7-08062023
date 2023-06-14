@@ -97,6 +97,14 @@ nav {
   gap: 65px;
   margin-bottom: 55px;
   margin-top: 20px;
+  align-items: center;
+}
+
+body > nav > span{
+  font-family: "Anton";
+  font-size: 21px;
+  font-weight: 400;
+  margin-left: 200px;
 }
 
 #myButton,
@@ -151,7 +159,7 @@ nav {
   width:200px;
 }
 
-.menu1 ul li:hover{
+.menu1 ul li:hover,.menu2 ul li:hover,.menu3 ul li:hover{
   color:red;
 }
 
@@ -257,6 +265,34 @@ nav {
   display: block;
 }
 
+/***********nav Filtres***************/
+/***********nav Filtres***************/
+/***********nav Filtres***************/
+.filtres{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 65px;
+}
+
+
+.filtres div{
+  background-color: #FFD15B;
+  width: 180px;
+  height: 56px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+
 /***********main***************/
 /***********main***************/
 /***********main***************/
@@ -266,9 +302,7 @@ flex-direction:row;
 justify-content: space-around;
 flex-wrap: wrap;
 gap:30px;
-
 }
-
 
 main section {
   border: 2px solid black;
@@ -289,6 +323,7 @@ main section {
   }
 
   h2 {
+    font-family: "Anton";
     font-size: 18px;
     font-weight: 400;
   }
