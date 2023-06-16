@@ -5,8 +5,9 @@ let filtres = [];
 
 let choix = '';
 
+//création de tous les filtres
 selectIngredient.forEach(element => {
-    //recupération chaine selletionnée en supprimant les espaces             
+    //recupération chaine selectionnée en supprimant les espaces             
     choix = element.innerText.replace(/\s/g, '');
   //création des éléments du DOM avec id du nom de l'élément selectionné        
   const filtre = document.querySelector('.filtres');
@@ -16,8 +17,6 @@ selectIngredient.forEach(element => {
 
   filtre.appendChild(selectFiltre);
   document.getElementById(`div${choix}`).style.display = 'none';
-
-
 });
 
 
@@ -30,12 +29,10 @@ selectIngredient.forEach(element => {
         //recherche dans le tableau si la selection à déjà été selectionné
         const found = filtres.indexOf(choix);
       
-console.log(found);
         if (found == -1) {
             //insertion dans un tableau       
             filtres.push(choix);
-            console.log(filtres);
-
+   
             document.getElementById(`div${choix}`).style.display = 'flex';
 
             //ajout d'un addEvenListner sur la croix de fermeture de l'élément
@@ -55,9 +52,6 @@ console.log(found);
                 document.getElementById(e.target.id).removeEventListener('click',fermetureFiltre);
             }
             document.getElementById(choix).addEventListener('click',fermetureFiltre);
-            console.log('ajoutchoix :'+ choix);
-           
-            
         }
     })
 });
