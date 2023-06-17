@@ -63,3 +63,22 @@ function displayRecipesCards() {
     txtSpan.innerHTML = `${compteur} recettes`;
     nbRecipes.appendChild(txtSpan);
 };
+
+
+function filtresAndSearch(){
+
+    occurenceSaisie.forEach(number=>{
+
+        filtres.forEach(filtre=>{
+
+            
+        });
+    
+
+    });
+
+    filtres.forEach(filtre=>{
+    });
+
+
+}
