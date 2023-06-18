@@ -1,9 +1,12 @@
 const recipeCard = document.querySelector('main');
 
+
+
 function ingredientsList(ingredients) {
     let cardIngredient1 = `<ul>`;
     let cardIngredient2 = `<ul>`;
     let compteur = 0;
+    
 
     ingredients.forEach(element => {
         if (compteur % 2 == 0) {
@@ -29,13 +32,15 @@ function ingredientsList(ingredients) {
     return (cardIngredient1 + cardIngredient2);
 }
 
+
+
 function displayRecipesCards() {
     const recipeCard = document.querySelector('main');
     let compteur = 0;
     recipes.forEach(element => {
-        compteur++;
         const wrapper = document.createElement('section');
-
+        wrapper.setAttribute('id',`recette${compteur}`);
+        compteur++;
         let card = `
             <img src="/assets/${element.image}">
             <div class="recipe">
@@ -57,28 +62,14 @@ function displayRecipesCards() {
         wrapper.innerHTML = card;
         recipeCard.appendChild(wrapper);
 
+
+
     });
+
+
     const nbRecipes = document.querySelector('.navigation');
     const txtSpan = document.createElement('span');
+    txtSpan.setAttribute('id','numberRecipes')
     txtSpan.innerHTML = `${compteur} recettes`;
     nbRecipes.appendChild(txtSpan);
 };
-
-
-function filtresAndSearch(){
-
-    occurenceSaisie.forEach(number=>{
-
-        filtres.forEach(filtre=>{
-
-            
-        });
-    
-
-    });
-
-    filtres.forEach(filtre=>{
-    });
-
-
-}

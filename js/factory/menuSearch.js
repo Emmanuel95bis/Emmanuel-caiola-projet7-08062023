@@ -1,61 +1,20 @@
 const selectIngredient = document.querySelectorAll('#choix1');
 
-//tableau d'index recette ou l'on trouve les filtres
-let occurenceFilters = [];
-//tableau des filtres actifs
-let filtres = [];
-//tableau contaténation des ustencils, ingrédients avec un numéro index
-let filtersSearch = [];
-
-let num = 0;
-let concatChaine = '';
 
 
 
-//création de la table pour filtre
-recipes.forEach(recipe => {
-    concatChaine = '';
-
-    recipe.ingredients.forEach(ingredient => {
-        concatChaine = `${concatChaine}${ingredient.ingredient.toLowerCase()}`;
-    })
-
-    recipe.ustensils.forEach(ustensil => {
-        concatChaine = `${concatChaine}${ustensil.toLowerCase()}`;
-    })
-
-    filtersSearch[num] = recipe.appliance.toLowerCase().replace(/\s/g, '') + concatChaine.replace(/\s/g, '');
-    num++;
-});
-
-console.log("concaténation : " + filtersSearch);
 
 
-function searchFiltersInRecipes() {
 
-    occurenceFilters=[];
-    let flag = Boolean;
-    let posArray=0;
-filtersSearch.forEach(filterSearch=>{
-    flag=true;
-    filtres.forEach(filtre=>{
-                if (filterSearch.search(filtre.toLowerCase())==-1) flag=false;
 
-});
 
-if (flag==true){
-    console.log("xxxxxxxxxxxxxxxxx");
-    occurenceFilters.push(posArray);
-}
-posArray++;
-});
-
-console.log("num recette filtre : "+occurenceFilters.length);
-}
-
-let choix = '';
 
 //création de tous les filtres
+//création de tous les filtres
+//création de tous les filtres
+let choix = '';
+
+
 selectIngredient.forEach(element => {
     //recupération chaine selectionnée en supprimant les espaces             
     choix = element.innerText.replace(/\s/g, '');
@@ -68,7 +27,8 @@ selectIngredient.forEach(element => {
     filtre.appendChild(selectFiltre);
     document.getElementById(`div${choix}`).style.display = 'none';
 });
-
+console.log("1111111111111");
+console.log(occurenceFilters);
 
 selectIngredient.forEach(element => {
 
@@ -82,7 +42,7 @@ selectIngredient.forEach(element => {
         if (found == -1) {
             //insertion dans un tableau       
             filtres.push(choix);
-            console.log("wwwwwwwwwwwwwwwwww");
+console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             console.log(filtres);
 
             searchFiltersInRecipes();
@@ -95,11 +55,15 @@ selectIngredient.forEach(element => {
                 document.getElementById(`div${e.target.id}`).style.display = 'none';
 
                 //suppression dans le tableau de la selection
-                console.log("ZZZZZZZZZZZZZZZZZZZ");
-
+                
                 filtres.splice(filtres.indexOf(e.target.id), 1);
+                console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+            console.log(filtres);
 
                 searchFiltersInRecipes();
+
+                console.log("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
+                console.log(filtres);
 
                 document.getElementById(e.target.id).removeEventListener('click', fermetureFiltre);
             }
@@ -108,3 +72,31 @@ selectIngredient.forEach(element => {
     })
 });
 
+
+
+
+//fonction de recherche occurrences des filtres dans les recettes
+function searchFiltersInRecipes() {
+
+    occurenceFilters = [];
+    let flag = Boolean;
+    filtersSearch.forEach(filterSearch => {
+        flag = true;
+        filtres.forEach(filtre => {
+            if (filterSearch.search(filtre.toLowerCase()) == -1) flag = false;
+        });
+
+        if (flag) {
+               occurenceFilters.push("1");
+        } else {
+            occurenceFilters.push("0");
+        }
+    });
+    console.log("33333333333");
+    console.log(occurenceFilters);
+
+    recipesDisplay();
+
+    console.log("4444444444444");
+console.log(occurenceFilters);
+}
