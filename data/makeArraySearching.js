@@ -6,9 +6,6 @@ const searchArray = [];
 let indice = 0;
 let contenu = '';
 
-console.log("variable de recette :");
-console.log(recipes);
-
 recipes.forEach(element => {
     contenu = '';
     contenu = element.id + " " + element.name + " " + element.description + " ";
@@ -23,7 +20,6 @@ recipes.forEach(element => {
 });
 
 
-console.log(searchArray);
 
 
 
@@ -46,5 +42,3 @@ recipes.forEach(recipe => {
     filtersSearch[num] = recipe.appliance.toLowerCase().replace(/\s/g, '') + concatChaine.replace(/\s/g, '');
     num++;
 });
-
-console.log("concaténation : " + filtersSearch);

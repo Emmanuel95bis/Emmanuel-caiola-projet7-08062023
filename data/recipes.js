@@ -1,12 +1,3 @@
-//tableau d'index recette ou l'on trouve les filtres
-let occurenceFilters = [];
-//tableau des filtres actifs
-let filtres = [];
-
-
-
-//tableau des occurences correspondant à la recherche input
-let occurenceSaisie=[];
 
 const recipes = [
     {

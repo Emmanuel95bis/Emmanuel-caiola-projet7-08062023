@@ -1,19 +1,14 @@
+//tableau d'index recette ou l'on trouve les filtres
+let occurenceFilters = [];
+//tableau des filtres actifs
+let filtres = [];
+
+
+
 const selectIngredient = document.querySelectorAll('#choix1');
 
-
-
-
-
-
-
-
-
-
-//création de tous les filtres
-//création de tous les filtres
 //création de tous les filtres
 let choix = '';
-
 
 selectIngredient.forEach(element => {
     //recupération chaine selectionnée en supprimant les espaces             
@@ -27,8 +22,6 @@ selectIngredient.forEach(element => {
     filtre.appendChild(selectFiltre);
     document.getElementById(`div${choix}`).style.display = 'none';
 });
-console.log("1111111111111");
-console.log(occurenceFilters);
 
 selectIngredient.forEach(element => {
 
@@ -42,8 +35,6 @@ selectIngredient.forEach(element => {
         if (found == -1) {
             //insertion dans un tableau       
             filtres.push(choix);
-console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            console.log(filtres);
 
             searchFiltersInRecipes();
 
@@ -57,13 +48,8 @@ console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
                 //suppression dans le tableau de la selection
                 
                 filtres.splice(filtres.indexOf(e.target.id), 1);
-                console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-            console.log(filtres);
 
                 searchFiltersInRecipes();
-
-                console.log("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
-                console.log(filtres);
 
                 document.getElementById(e.target.id).removeEventListener('click', fermetureFiltre);
             }
@@ -92,11 +78,6 @@ function searchFiltersInRecipes() {
             occurenceFilters.push("0");
         }
     });
-    console.log("33333333333");
-    console.log(occurenceFilters);
 
     recipesDisplay();
-
-    console.log("4444444444444");
-console.log(occurenceFilters);
 }
