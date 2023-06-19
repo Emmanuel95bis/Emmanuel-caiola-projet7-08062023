@@ -9,6 +9,7 @@ function searchInArray(e){
     occurenceSaisie=[];
 
     let saisieString=e.target.value.toLowerCase()
+  
 
 if (saisieString.length > 2){
     searchArray.forEach(chaine=>{
@@ -18,8 +19,9 @@ if (saisieString.length > 2){
             occurenceSaisie.push("0");
         }
      });
+     recipesDisplay();
 }
-recipesDisplay();
+
 }
 
     
