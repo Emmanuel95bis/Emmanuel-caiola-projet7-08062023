@@ -1,4 +1,5 @@
 let tableau = [];
+let tableauAll=[];
 let liste = '';
 let chaine = '';
 let compteur = 0;
@@ -18,11 +19,17 @@ function createMenuList(tableau) {
 
 //création des listes dans un tableau
 function displayMenuConstruction(element) {
+    let presence=false;
     element = element.charAt(0).toUpperCase() + element.slice(1);
-    if (chaine.search(element) == -1) {
+    tableauAll.forEach(tabElement=>{
+    if (element==tabElement) presence=true;
+    });
+    if (!presence) tableau.push(element);
+    if (!presence) tableauAll.push(element);
+    /*if (chaine.search(element) == -1) {
         chaine = chaine + element;
         tableau.push(element);
-    };
+    };*/
 }
 
 function displayMenu() {

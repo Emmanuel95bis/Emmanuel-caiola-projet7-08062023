@@ -19,8 +19,9 @@ if (saisieString.length > 2){
             occurenceSaisie.push("0");
         }
      });
-     recipesDisplay();
+     
 }
+recipesDisplay();
 
 }
 

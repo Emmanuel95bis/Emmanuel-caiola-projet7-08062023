@@ -27,11 +27,8 @@ function searchInArray(e) {
             }
             if (!found) occurenceSaisie.push("0");
           }
-
-       
-          recipesDisplay();
- 
     }
+    recipesDisplay();
 
 }
 

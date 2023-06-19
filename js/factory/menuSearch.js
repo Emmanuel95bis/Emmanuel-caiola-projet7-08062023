@@ -21,6 +21,7 @@ selectIngredient.forEach(element => {
 
     filtre.appendChild(selectFiltre);
     document.getElementById(`div${choix}`).style.display = 'none';
+    console.log(`div${choix}`);
 });
 
 selectIngredient.forEach(element => {

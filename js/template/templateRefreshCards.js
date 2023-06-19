@@ -22,6 +22,7 @@ function recipesDisplay() {
 
      //s'il n'y a pas de saisie
      if (occurenceSaisie.length==0) {
+        
         flagSaisie=true;
         occurence2=occurenceFilters;
         recipesDisplayGo();
