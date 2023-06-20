@@ -17,12 +17,13 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 header img {
   position: absolute;
   top: 50px;
-  left: 220px;
+  left: 100px;
   width: 12%;
 }
 
