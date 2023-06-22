@@ -5,15 +5,26 @@ let chaine = '';
 let compteur = 0;
 
 
+function suppressCaractere(chaine){
+    chaine=chaine.replace(/ /g,'');
+    chaine=chaine.replace('(','');
+    chaine=chaine.replace(')','');
+    chaine=chaine.replace("'",'');
+    chaine=chaine.replace("%",'');
+    return chaine;
+
+}
+
 //creation des listes à partir du tableau ordonné
 function createMenuList(tableau) {
+    let element2;
     tableau.sort();
     compteur = 0;
     tableau.forEach(element => {
         compteur++;
         if (compteur == 1) liste = liste + "<ul>";
         if (compteur % 30 == 0) liste = liste + '</ul><ul>';
-        liste = liste + `<li id="choix1">${element}</li>`;
+        liste = liste + `<li id="choix1" class="${suppressCaractere(element)}">${element}</li>`;
     });
 }
 
@@ -26,10 +37,6 @@ function displayMenuConstruction(element) {
     });
     if (!presence) tableau.push(element);
     if (!presence) tableauAll.push(element);
-    /*if (chaine.search(element) == -1) {
-        chaine = chaine + element;
-        tableau.push(element);
-    };*/
 }
 
 function displayMenu() {

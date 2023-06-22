@@ -21,8 +21,7 @@ selectIngredient.forEach(element => {
 
     filtre.appendChild(selectFiltre);
     document.getElementById(`div${choix}`).style.display = 'none';
-    console.log(`div${choix}`);
-});
+   });
 
 selectIngredient.forEach(element => {
 
@@ -36,6 +35,7 @@ selectIngredient.forEach(element => {
         if (found == -1) {
             //insertion dans un tableau       
             filtres.push(choix);
+            console.log(filtres);
 
             searchFiltersInRecipes();
 

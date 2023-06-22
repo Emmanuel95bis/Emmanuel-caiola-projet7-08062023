@@ -1,5 +1,5 @@
 
-let occurence2 = [];
+
 
 function recipesDisplayGo(){
     let numberRecipesDisplayed = 0;
@@ -12,6 +12,8 @@ function recipesDisplayGo(){
         }
     }
 document.getElementById('numberRecipes').innerHTML=`${numberRecipesDisplayed} recettes`;
+
+updateMenusDeroulants();
 }
 
 //rafraichisement des affichages des recettes en fonction des recettes
@@ -19,10 +21,11 @@ function recipesDisplay() {
     
     let flagFilters = false;
     let flagSaisie = false;
+    console.log(occurenceFilters);
+    console.log(occurenceSaisie);
 
      //s'il n'y a pas de saisie
      if (occurenceSaisie.length==0) {
-        
         flagSaisie=true;
         occurence2=occurenceFilters;
         recipesDisplayGo();
@@ -34,8 +37,17 @@ function recipesDisplay() {
     }
 
  //s'il n'y a pas de filtres
- if (flagFilters==false) {
+ if (flagFilters==false && occurenceSaisie.length!=0) {
     occurence2=occurenceSaisie;
+    recipesDisplayGo();
+ }
+
+
+ 
+ //s'il n'y a pas de filtres ni de saisie
+ if (flagFilters==false && occurenceSaisie.length==0) {
+    
+    occurence2=occurenceFilters;
     recipesDisplayGo();
  }
 
