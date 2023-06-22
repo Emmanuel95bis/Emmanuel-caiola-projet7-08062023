@@ -1,63 +1,53 @@
 
-
-
-function recipesDisplayGo(){
+function recipesDisplayGo(status){
     let numberRecipesDisplayed = 0;
+    let message='';
     for (let i = 0; i < recipes.length; i++) {
-        if (occurence2[i] == '1') {
+        if (occurence2[i] == '1' || status=='all') {
             numberRecipesDisplayed++;
             document.getElementById(`recette${i}`).style.display = "block";
         } else {
             document.getElementById(`recette${i}`).style.display = "none";
         }
     }
+    
 document.getElementById('numberRecipes').innerHTML=`${numberRecipesDisplayed} recettes`;
 
+message=`Aucune recette ne contient "${saisieString}" vous pouvez chercher «
+tarte aux pommes », « poisson », etc.`;
+document.getElementById('errorMessage').innerHTML=message;
+numberRecipesDisplayed==0?document.getElementById('errorMessage').style.display="flex":document.getElementById('errorMessage').style.display="none";
 updateMenusDeroulants();
 }
 
 //rafraichisement des affichages des recettes en fonction des recettes
 function recipesDisplay() {
-    
-    let flagFilters = false;
-    let flagSaisie = false;
-    console.log(occurenceFilters);
-    console.log(occurenceSaisie);
 
-     //s'il n'y a pas de saisie
-     if (occurenceSaisie.length==0) {
-        flagSaisie=true;
-        occurence2=occurenceFilters;
-        recipesDisplayGo();
-         }
+// le tableau saisie et filters sont vide
+if (occurenceSaisie.length==0 && occurenceFilters.length==0){
+recipesDisplayGo("all");
+}
 
-    for (let j = 0; j < recipes.length; j++) {
-        if (occurenceFilters[j] === '1') {flagFilters = true};
-        if (occurenceSaisie[j] === '1') { flagSaisie = true};
-    }
-
- //s'il n'y a pas de filtres
- if (flagFilters==false && occurenceSaisie.length!=0) {
-    occurence2=occurenceSaisie;
-    recipesDisplayGo();
- }
-
-
- 
- //s'il n'y a pas de filtres ni de saisie
- if (flagFilters==false && occurenceSaisie.length==0) {
-    
+//seul le tableau de saisie est vide
+if (occurenceSaisie.length==0 && occurenceFilters.length!=0){
     occurence2=occurenceFilters;
-    recipesDisplayGo();
- }
+    recipesDisplayGo("normal");
+}
 
-//Si ni la saisie est vide, ni l'absence de fitre, création de occurence2 pour les occurrences communes des 2 tableaux
-if ((flagFilters!=false) && (occurenceSaisie.length!=0)){    
+//seul le tableau filters est vide
+if (occurenceSaisie.length!=0 && occurenceFilters.length==0){
+    occurence2=occurenceSaisie;
+    recipesDisplayGo("normal");
+}
+
+//aucun tableaux vides
+if (occurenceSaisie.length!=0 && occurenceFilters.length!=0){
     occurence2=[];
     for (let k = 0; k < recipes.length; k++) {
         ((occurenceFilters[k] === '1') && (occurenceSaisie[k] === '1'))?occurence2.push('1'):occurence2.push('0');
     }
-    recipesDisplayGo();
+    recipesDisplayGo("normal");
 }
+
 }
 

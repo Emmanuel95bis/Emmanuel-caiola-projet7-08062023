@@ -1,5 +1,6 @@
 
 const saisieArea = document.getElementById('inputSearch');
+let saisieString;
 
 
 //tableau des occurences correspondant à la recherche input
@@ -8,7 +9,7 @@ let occurenceSaisie = [];
 function searchInArray(e) {
     occurenceSaisie = [];
 
-    let saisieString = e.target.value.toLowerCase()
+    saisieString = e.target.value.toLowerCase()
     let offset = 0;
     let found = Boolean;
     if (saisieString.length > 2) {

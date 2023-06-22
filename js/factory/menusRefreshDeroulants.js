@@ -4,7 +4,6 @@
 function refreshdisplay(element,etat){
     element = element.charAt(0).toUpperCase() + element.slice(1);
     element= suppressCaractere(element);
-    console.log(element);
     etat=="flex"?document.querySelector(`.${element.replace(/ /g,'')}`).style.display="flex":document.querySelector(`.${element.replace(/ /g,'')}`).style.display="none";
 }
 

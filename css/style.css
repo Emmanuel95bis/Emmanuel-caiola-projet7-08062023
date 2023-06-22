@@ -27,6 +27,11 @@ header img {
   width: 12%;
 }
 
+header span {
+  font-size: 20px;
+  color: white;
+}
+
 .rond1 {
   position: absolute;
   top: 50px;
