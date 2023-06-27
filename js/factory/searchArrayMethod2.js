@@ -10,8 +10,7 @@ function searchInArray(e) {
     occurenceSaisie = [];
 
     saisieString = e.target.value.toLowerCase()
-    let offset = 0;
-    let found = Boolean;
+
     if (saisieString.length > 2) {
 
           for (let i = 0; i < searchArray.length; i++) {
@@ -32,7 +31,6 @@ function searchInArray(e) {
     recipesDisplay();
 
 }
-
 
 saisieArea.addEventListener("input", searchInArray);
 

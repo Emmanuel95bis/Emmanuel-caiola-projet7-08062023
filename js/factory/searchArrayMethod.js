@@ -1,16 +1,14 @@
 
 const saisieArea = document.getElementById('inputSearch');
-
+let saisieString;
 
 //tableau des occurences correspondant à la recherche input
-let occurenceSaisie=[];
+let occurenceSaisie = [];
 
 function searchInArray(e){
-    occurenceSaisie=[];
-
+    occurenceSaisie = [];
     let saisieString=e.target.value.toLowerCase()
   
-
 if (saisieString.length > 2){
     searchArray.forEach(chaine=>{
        if (chaine.search(saisieString)!=-1){ 
@@ -22,8 +20,6 @@ if (saisieString.length > 2){
      
 }
 recipesDisplay();
-
 }
-
     
 saisieArea.addEventListener("input", searchInArray);

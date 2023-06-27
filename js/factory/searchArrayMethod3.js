@@ -1,4 +1,5 @@
 let occurenceSaisie=[];
+let saisieString;
 
 class Recipe {
     constructor(name, recette, saisie) {
